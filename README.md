@@ -1,0 +1,2 @@
+# EduAdmin
+EduAdmin app
