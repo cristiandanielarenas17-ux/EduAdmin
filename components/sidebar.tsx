@@ -57,16 +57,13 @@ export function Sidebar() {
           <div className="my-5 border-t border-zinc-800" />
           <p className="mb-3 px-3 text-[11px] font-semibold uppercase tracking-wider text-zinc-600">Sistema</p>
 
-          {[] .map((item) => {
-            const Icon = item.icon;
-            const active = pathname.startsWith(item.href);
-            return (
-              <Link key={item.href} href={item.href} onClick={() => setOpen(false)}
-                className={`flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm transition ${active ? "bg-indigo-600/10 font-medium text-indigo-400" : "text-zinc-400 hover:bg-zinc-800 hover:text-white"}`}>
-                <Icon size={18} /> {item.label}
-              </Link>
-            );
-          })}
+          <Link
+            href="/configuracion"
+            onClick={() => setOpen(false)}
+            className={`flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm transition ${pathname.startsWith("/configuracion") ? "bg-indigo-600/10 font-medium text-indigo-400" : "text-zinc-400 hover:bg-zinc-800 hover:text-white"}`}
+          >
+            <Settings size={18} /> Configuración
+          </Link>
         </nav>
 
         <div className="absolute bottom-0 w-full border-t border-zinc-800 p-4">
